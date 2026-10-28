@@ -58,7 +58,7 @@ A Torles feliratra a tab nyomasaval nem lehet ralepni, ha megis sikerulne, enter
 - **Gyökérok (sor + magyarázat):**
 A Torles felirat es span elembe van rakva, egy span nem fokuszalhato, nem interaktiv elem es nem ismeri fel a billentyuzetes esemenyeket.
 - **Javítás (commit link):**
-
+  https://github.com/KrisztianB9/umfst-bh02-idopontfoglalo/commit/57b84a2cd9a941d762cf8647fbb1d4742b7ef60c
 - **Hogyan tesztelted (kézi tesztlépések, konzolos ellenőrzés vagy egységteszt):**
 Kezi tesztelessel, rogzitettem egy beteget, majd a billentyuzeten a tab lenyomasaval ra tudtam lepni a torles gombra es az enterrel kitoroltem. 
 - **Tanulság / érintett alapelv:**
@@ -70,12 +70,12 @@ Ha 50-nel tobb foglalast rogzitunk, a felulet erezhetoen belassul minden uj bete
 - **Gyökérok (sor + magyarázat):**
 Az app.js 23-25 soraiban a render fuggveny a cikluson belul a lista.innerHTML += ... parancsot hasznalja, ezert minden egyes cikluslepesben a bongeszo beolvassa a teljes eddigi hmtl-t, hozzafuzi a szoveget, majd az egeszet vissza kell forditania DOM elemekke.
 - **Javítás (commit link):**
-
+  https://github.com/KrisztianB9/umfst-bh02-idopontfoglalo/commit/736d69d5699cd4284ab266de068a0ab4f137c5b9
 - **Hogyan tesztelted (kézi tesztlépések, konzolos ellenőrzés vagy egységteszt):**
 Konzolos ellenorzessel, futtattam egy for (let i=0; i<60; i++) foglalasok.push({nev="Teszt", ido="12:00"}); ment(); render(); kodot. A javitas utan erezheto volt a lassulas, javitas utan azonnal megjelent a lista.
 - **Tanulság / érintett alapelv:**
 DOM-manipulacio minimalizalasa. Sose hasznaljuk innerHTML += fuggvenyt cikluson belul. 
 
 ## Összegzés
-- Mit tanultam:
-- Melyik alapelv sérült a leggyakrabban: 
+- Mit tanultam: A JavaScript rugalmassaga veszelyes lehet. Az adatszerkezetek helyes kezelese, a cikluson beluli DOM muveletek lassito hatasa, valamint a felhasznalok altal kuldott adatok megszurese fontos egy mukodo alkalmazas letrehozasaban.
+- Melyik alapelv sérült a leggyakrabban: A biztosnag es a megfelelo adat-osszehasonlitas. 
