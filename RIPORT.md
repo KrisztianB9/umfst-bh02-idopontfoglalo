@@ -18,10 +18,15 @@ Objektumokat tartalmazo tombre nem hasznalunk indexOf-ot primitiv ertek keresese
 
 ## 2. hiba
 - **Hiba leírása és reprodukálása:**
+A napi limit 8-ra van allitva, de megis be enged 9 foglalast es csak a 10. lesz elutasitva. 
 - **Gyökérok (sor + magyarázat):**
+Az app.js 40. soraban az if-ben talalhato feltetel hibas, ">" helyett ">=" kell hasznalni, mivel igy amikor mar 8 foglalasunk van, elutasitja hogy meg egyet foglaljunk.
 - **Javítás (commit link):**
+
 - **Hogyan tesztelted (kézi tesztlépések, konzolos ellenőrzés vagy egységteszt):**
+Kezi tesztelessel, ahhoz hogy gyorsabban menjen ideiglenesen atirtam a napi limitet 3-ra es nem , mikor megprobaltam berogziteni a 4. foglalast, elutasitotta.
 - **Tanulság / érintett alapelv:**
+Off-by-one hiba. Mindig oda kell figyelni a relacios jelek mefelelo hasznalatara.
 
 ## 3. hiba
 - **Hiba leírása és reprodukálása:**
