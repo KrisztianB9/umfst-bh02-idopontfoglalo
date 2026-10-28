@@ -42,10 +42,15 @@ A JS sort() fuggvenyebe atadott callbacknek szammal kell visszaternie, nem logik
 
 ## 4. hiba
 - **Hiba leírása és reprodukálása:**
+Ha a beteg nevekent a <img src=x onerror="document.body.style.background='red'"> kodot adjuk meg, az bekerul a html-be, hibara fut a nem letezo kep miatt es az onerror esemenyben levo js lefut, ami pirosra allitja a hatteret.
 - **Gyökérok (sor + magyarázat):**
+Az app.js 24. soraban a render fuggveny a felhasznalo altal megadott nevet mindenfele tisztitas vagy kodolas nelkul, kozvetlenul fuzi be a DOM-ba. Mivel a bongeszo HTML-kent ertelmezi a szoveget, a kod is lefut. Ezt XSS-nek hivjuk, Cross-Site Scripting.
 - **Javítás (commit link):**
+
 - **Hogyan tesztelted (kézi tesztlépések, konzolos ellenőrzés vagy egységteszt):**
+Kezi tesztelessel, beirtam a rosszindulatu kodot es a hatter nem valtozott, a szoveg karaktersorkent jelent meg a listaban.
 - **Tanulság / érintett alapelv:**
+Sose bizz meg a felhasznaloban, a felhasznalotol erkezo adatokat mindig escapelni kell.
 
 ## 5. hiba
 - **Hiba leírása és reprodukálása:**
