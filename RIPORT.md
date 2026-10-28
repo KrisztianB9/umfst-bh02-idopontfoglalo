@@ -30,10 +30,15 @@ Off-by-one hiba. Mindig oda kell figyelni a relacios jelek mefelelo hasznalatara
 
 ## 3. hiba
 - **Hiba leírása és reprodukálása:**
+A foglalasok nem rendezodnek sorrendbe ido alapjan. Ha lefoglalunk egy idopontot 10:00 orara, majd egyet 8:30 orara, a 8:30 a 10:00 alatt lesz.
 - **Gyökérok (sor + magyarázat):**
+Az app.js 17. soraban a rendezes() fuggveny hibas. a .sort() metodus nem logikai ertekeket var vissza, az a.ido > b.ido booleant ad vissza, ezert a rendezes elmarad.
 - **Javítás (commit link):**
+
 - **Hogyan tesztelted (kézi tesztlépések, konzolos ellenőrzés vagy egységteszt):**
+Kezi teszteles, felvettem egymas utan egy 11:00, 7:00 majd egy 9:00 idopontot, a vegen sikeresen rendezesre kerultek es idorendi sorrendben kerultek kijelzesre.
 - **Tanulság / érintett alapelv:**
+A JS sort() fuggvenyebe atadott callbacknek szammal kell visszaternie, nem logikai ertekkel.
 
 ## 4. hiba
 - **Hiba leírása és reprodukálása:**
