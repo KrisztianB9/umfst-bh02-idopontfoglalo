@@ -66,10 +66,15 @@ Ha valami gombkent viselkedik, akkor button elem kell legyen.
 
 ## 6. hiba
 - **Hiba leírása és reprodukálása:**
+Ha 50-nel tobb foglalast rogzitunk, a felulet erezhetoen belassul minden uj beteg felvetelenel.
 - **Gyökérok (sor + magyarázat):**
+Az app.js 23-25 soraiban a render fuggveny a cikluson belul a lista.innerHTML += ... parancsot hasznalja, ezert minden egyes cikluslepesben a bongeszo beolvassa a teljes eddigi hmtl-t, hozzafuzi a szoveget, majd az egeszet vissza kell forditania DOM elemekke.
 - **Javítás (commit link):**
+
 - **Hogyan tesztelted (kézi tesztlépések, konzolos ellenőrzés vagy egységteszt):**
+Konzolos ellenorzessel, futtattam egy for (let i=0; i<60; i++) foglalasok.push({nev="Teszt", ido="12:00"}); ment(); render(); kodot. A javitas utan erezheto volt a lassulas, javitas utan azonnal megjelent a lista.
 - **Tanulság / érintett alapelv:**
+DOM-manipulacio minimalizalasa. Sose hasznaljuk innerHTML += fuggvenyt cikluson belul. 
 
 ## Összegzés
 - Mit tanultam:
